@@ -1,5 +1,6 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+// import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 import Navbar from "../Navbar/Navbar"
 import Hero from "../Hero/Hero"
 import Sidebar from "../Sidebar/Sidebar"
@@ -7,6 +8,7 @@ import Home from "../Home/Home"
 import "./App.css"
 import {useEffect, useState} from 'react'
 import axios from 'axios'
+import ProductDetails from '../ProductDetails/ProductDetails';
 // import SearchComponent from "../searchComponent/searchComponent"
 
 
@@ -31,6 +33,7 @@ export default function App() {
           <Hero />
           {/* <SearchComponent data={products}/> */}
           {/* <SubNavBar products={products} /> */}
+          
           <Home products={products} />
         </main>
       </BrowserRouter>

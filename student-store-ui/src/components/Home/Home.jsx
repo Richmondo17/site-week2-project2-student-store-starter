@@ -9,6 +9,7 @@ export default function Home({ products }) {
 
 const [searchTerm, setSearchTerm] = useState("");
 const [filteredProduct, setFilteredProduct] = useState(products);
+const categories = Array.from(new Set(products.map((item) => item.category)));
 
 const handleSearch = (event) =>{
     event.preventDefault();
@@ -18,8 +19,9 @@ const handleSearch = (event) =>{
 
     setFilteredProduct(
         products.filter((item) =>
-            item.name.toLowerCase().includes(event.target.value.toLowerCase()) && 
-            item.category.toLowerCase().includes(event.target.value.toLowerCase())
+            item.category.toLowerCase().includes(event.target.value.toLowerCase()) &&
+            item.name.toLowerCase().includes(event.target.value.toLowerCase()) 
+            
         )
     )
     console.log(filteredProduct)
@@ -28,19 +30,29 @@ const handleSearch = (event) =>{
   console.log(products)
   console.log("filtered products:")
 
+  const handleCategorySelect = (category) => {
+    setSearchTerm('');
+    setFilteredProduct(
+      products.filter((item) => item.category.toLowerCase().includes(category.toLowerCase()))
+    );
+  };
+
+
   return (
     <div className="home">
       <br></br>
       <div className="products-grid" style={{margin: '10px auto'}}>
       <div>
 
-        <SubNavbar/>
+      
         <input
         type="text"
         value={searchTerm}
         onChange={handleSearch}
         placeholder="Enter search....."
         />
+
+        <SubNavbar categories={categories} onSelectCategory={handleCategorySelect} />
 
         <ProductGrid product =  {filteredProduct.length == 0? products: filteredProduct }/>
         </div>
