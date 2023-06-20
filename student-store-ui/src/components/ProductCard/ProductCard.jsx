@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import "./ProductCard.css"
 
 export default function ProductCard({ name, id, image, price }) {
-  console.log(id);
+  // console.log(id);
   return (
     <section className="product" style={{margin: '10px auto'}}>
       <Link to={`/products/${id}`} className="product-link">

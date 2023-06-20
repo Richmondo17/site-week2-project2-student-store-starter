@@ -1,20 +1,41 @@
-import React from 'react';
-// import { BrowserRouter, Router, Routes, Route, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Router, Routes, Route, useParams } from 'react-router-dom';
+import { useState } from 'react';
 
-const ProductDetails = ({ match, products }) => {
-  const { productId } = match.params;
-  const product = products.find((item) => item.id === productId);
+import axios from 'axios';
+const ProductDetails = () => {
+  const { id } = useParams();
+  console.log(id)
+ 
+//   const product = products.find((item) => item.id === productId);
 
-  if (!product) {
-    return <div>Product not found</div>;
-  }
+
+  const url = "https://codepath-store-api.herokuapp.com/store";
+  const [products, setProducts] = useState({});
+
+  // const results = products.filter((product) => {});
+ useEffect(() => {
+    axios.get(url + "/" + id).then((response) => {
+        setProducts(response.data.product)
+        
+        
+    })
+ }, [])
+
+ console.log(products)
+
+
+
+//   if (!product) {
+//     return <div>Product not found</div>;
+//   }
 
   return (
     <div>
-      <h2>{product.name}</h2>
-      <img src={product.image} alt={product.name} style={{ width: '300px' }} />
-      <p>Price: ${product.price}</p>
-      <p>Description: {product.description}</p>
+      <h2>{products.name}</h2>
+      <img src={products.image} alt={products.name} style={{ width: '300px' }} />
+      <p>Price: ${products.price}</p>
+      <p>Description: {products.description}</p>
     </div>
   );
 };

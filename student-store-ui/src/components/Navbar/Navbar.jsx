@@ -19,11 +19,19 @@ export default function Navbar(props) {
         <br></br>
 
         <div className="links">
-          <ul>
-            <li id="link"><a href="">Home</a></li>
-            <li id="link"><a href="">About Us</a></li>
-            <li id="link"><a href="">Contact Us</a></li>
-            <li id="link"><a href="">Buy Now</a></li>
+          <ul className="navy">
+            <li id="link">
+              <a id ="home" href="#homePage">Home</a>
+            </li>
+            <li id="link">
+              <a id="about" href="#aboutUs">About Us</a>
+            </li>
+            <li id="link">
+              <a id ="contact" href="#contactUs">Contact Us</a>
+            </li>
+            <li id="link">
+              <a id="buy" href="#bestSeller">Buy Now</a>
+            </li>
           </ul>
         </div>
       </div>

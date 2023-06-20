@@ -1,6 +1,6 @@
 import * as React from "react"
 // import { BrowserRouter } from 'react-router-dom'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Navbar from "../Navbar/Navbar"
 import Hero from "../Hero/Hero"
 import Sidebar from "../Sidebar/Sidebar"
@@ -9,6 +9,9 @@ import "./App.css"
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 import ProductDetails from '../ProductDetails/ProductDetails';
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
 // import SearchComponent from "../searchComponent/searchComponent"
 
 
@@ -20,7 +23,7 @@ export default function App() {
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
-      console.log(response.data.products)
+      // console.log(response.data.products)
     });
   }, []);
 
@@ -29,12 +32,19 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar />
           <Hero />
+          {/* <Sidebar /> */}
+          <Routes>
+              <Route path= "/" element={<Home products={products} /> } />
+              <Route path= "/products/:id" element ={<ProductDetails />} />
+
+          </Routes>
           {/* <SearchComponent data={products}/> */}
           {/* <SubNavBar products={products} /> */}
           
-          <Home products={products} />
+          <About/>
+          <Contact/>
+          <Footer/>
         </main>
       </BrowserRouter>
     </div>

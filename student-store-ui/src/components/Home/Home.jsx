@@ -15,20 +15,20 @@ const handleSearch = (event) =>{
     event.preventDefault();
     setSearchTerm(event.target.value);
 
-    console.log(event.target.value)
+    // console.log(event.target.value)
 
-    setFilteredProduct(
+   const filter = setFilteredProduct(
         products.filter((item) =>
-            item.category.toLowerCase().includes(event.target.value.toLowerCase()) &&
+            // item.category.toLowerCase().includes(event.target.value.toLowerCase()) &&
             item.name.toLowerCase().includes(event.target.value.toLowerCase()) 
             
         )
     )
-    console.log(filteredProduct)
+    // console.log(filteredProduct)
   }
-  console.log("product:")
-  console.log(products)
-  console.log("filtered products:")
+  // console.log("product:")
+  // console.log(products)
+  // console.log("filtered products:")
 
   const handleCategorySelect = (category) => {
     setSearchTerm('');
@@ -52,9 +52,19 @@ const handleSearch = (event) =>{
         placeholder="Enter search....."
         />
 
+
+
         <SubNavbar categories={categories} onSelectCategory={handleCategorySelect} />
 
+        <div id="bestSeller">
+          <h2>Best Selling Products</h2>
+        </div>
+        
+
         <ProductGrid product =  {filteredProduct.length == 0? products: filteredProduct }/>
+        {/* <ProductGrid product = {products} /> */}
+        
+          
         </div>
       </div>
     </div>

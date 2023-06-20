@@ -40,3 +40,193 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.hero {
+  background-color: #00c385;
+  padding: 20px;
+  text-align: center;
+}
+
+.intro {
+  font-size: 50px;
+  /* color: #555; */
+  margin-bottom: 20px;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+
+.product-card .media {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center
+}
+
+.product-card .media img {
+  max-width: 800px
+}
+
+.product-card .product-info {
+  flex: 1;
+  display: flex;
+  border-top: solid 1px var(--border-color)
+}
+
+.product .main-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px
+  var(--bright-red) #fe3210;
+}
+
+.product-card .main-info .product-name {
+  font-size: 15px;
+  font-weight: 500
+}
+
+.product-card .main-info .product-price {
+  font-size: 14px
+}
+
+
+
+/* .contactSummary{
+  --side-padding: 40px;
+  --content-width: 1100px;
+  --dark-blue: #2c4047;
+  --bright-green: #00c385;
+  --pure-white: #fff;
+  --grey-bg: #f7f7f7;
+  --accent-orange: #ff9017;
+  --bright-red: #fe3210;
+  --muted: #969696;
+  --font-dark: #212121;
+  --font-light: #5b5b5b;
+  --border-color: #e4e4e4;
+  --star-color-filled: #e5a800;
+  --star-color-empty: #cbd4e6;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  display: flex;
+  flex-direction: row;
+  background: var(--dark-blue);
+  color: var(--pure-white);
+  height: 330px;
+  border: solid 1px #e0e0e0;
+  overflow: visible;
+} */
+
+/* li {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+} */
+
+.footer .content .top {
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  padding-top: 40px;
+}
+
+.top{
+  --side-padding: 40px;
+  --content-width: 1100px;
+  --dark-blue: #2c4047;
+  --bright-green: #00c385;
+  --pure-white: #fff;
+  --grey-bg: #f7f7f7;
+  --accent-orange: #ff9017;
+  --bright-red: #fe3210;
+  --muted: #969696;
+  /* --font-dark: #212121; */
+  /* --font-light: #5b5b5b; */
+  --border-color: #e4e4e4;
+  --star-color-filled: #e5a800;
+  --star-color-empty: #cbd4e6;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  color: var(--font-dark);
+  flex: 1;
+  padding-top: 40px;
+}
+
+.links{
+  --side-padding: 40px;
+  --content-width: 1100px;
+  --dark-blue: #2c4047;
+  --bright-green: #00c385;
+  --pure-white: #fff;
+  --grey-bg: #f7f7f7;
+  --accent-orange: #ff9017;
+  --bright-red: #fe3210;
+  --muted: #969696;
+  --font-dark: #212121;
+  --font-light: #5b5b5b;
+  --border-color: #e4e4e4;
+  --star-color-filled: #e5a800;
+  --star-color-empty: #cbd4e6;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  /* color: var(--font-dark); */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* .link-column{
+  --side-padding: 40px;
+  --content-width: 1100px;
+  --dark-blue: #2c4047;
+  --bright-green: #00c385;
+  --pure-white: #fff;
+  --grey-bg: #f7f7f7;
+  --accent-orange: #ff9017;
+  --bright-red: #fe3210;
+  --muted: #969696;
+  --font-dark: #212121;
+  --font-light: #5b5b5b;
+  --border-color: #e4e4e4;
+  --star-color-filled: #e5a800;
+  --star-color-empty: #cbd4e6;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  color: var(--font-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
+
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  list-style-type:armenian;
+}

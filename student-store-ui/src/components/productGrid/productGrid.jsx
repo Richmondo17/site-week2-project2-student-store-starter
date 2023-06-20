@@ -1,14 +1,23 @@
 import React from 'react'
 import ProductCard from "../ProductCard/ProductCard"
 import "./ProductGrid.css"
+import { BrowserRouter, Link, Outlet} from 'react-router-dom';
+
 
 const ProductGrid = (props) => {
 
-  const productData = props.product
+  let productData = props.product
+  console.log(productData[0])
+  
+
 
   return (
+    <>
+    <Link to={`products/${productData.id}`}>
+ 
     <div className='grid'>
      {productData.map((item) =>(
+      
             <ProductCard
             name={item.name}
             id={item.id}
@@ -16,8 +25,12 @@ const ProductGrid = (props) => {
             price={item.price}
             key={item.id}
           />
-        ))}
+      ))}
+  
     </div>
+    </Link>
+    </>
+  
   )
 }
 

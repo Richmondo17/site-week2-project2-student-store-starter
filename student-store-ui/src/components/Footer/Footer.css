@@ -1,0 +1,37 @@
+.footer .content .top .links .link-column ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: red;
+    margin-top: 10px;
+    font-size: 20px;
+}
+* {
+    box-sizing: border-box;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    color: black;
+    font-size: 20px;
+}
+.footer .content .top .links .link-column ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+ul {
+    list-style-type: disc;
+    background-color: white;
+}
+
+img{
+    color: black;
+}
+
+h4{
+    font-size: 20px;
+}
+
