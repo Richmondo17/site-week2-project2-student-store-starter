@@ -16,14 +16,14 @@ import Footer from "../Footer/Footer";
 
 
 export default function App() {
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  const url = "http://localhost:3001/store";
   const [products, setProducts] = useState([]);
 
   // const results = products.filter((product) => {});
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
-      // console.log(response.data.products)
+      console.log(response.data.products)
     });
   }, []);
 
@@ -33,11 +33,10 @@ export default function App() {
         <main>
           <Navbar />
           <Hero />
-          {/* <Sidebar /> */}
+          <Sidebar />
           <Routes>
               <Route path= "/" element={<Home products={products} /> } />
               <Route path= "/products/:id" element ={<ProductDetails />} />
-
           </Routes>
           {/* <SearchComponent data={products}/> */}
           {/* <SubNavBar products={products} /> */}
