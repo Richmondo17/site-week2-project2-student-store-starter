@@ -14,7 +14,8 @@
 }
 
 .product-card .media img {
-    max-width: 800px
+    max-width: 800px;
+    background-color: red;
 }
 
 .product-card .product-info {
@@ -148,5 +149,6 @@
 
 .product-grid .product-card .media img {
     height: 250px;
-    width: 248px
+    width: 248px;
+    background-color: red;
 }

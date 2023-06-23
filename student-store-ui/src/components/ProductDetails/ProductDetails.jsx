@@ -5,25 +5,23 @@ import { useState } from 'react';
 import axios from 'axios';
 const ProductDetails = () => {
   const { id } = useParams();
-  console.log(id)
+  // console.log(id)
  
 //   const product = products.find((item) => item.id === productId);
 
 
-  const url = "https://codepath-store-api.herokuapp.com/store";
+  const url = "http://localhost:3001/store";
   const [products, setProducts] = useState({});
 
   // const results = products.filter((product) => {});
  useEffect(() => {
     axios.get(url + "/" + id).then((response) => {
         setProducts(response.data.product)
-        
-        
     })
  }, [])
 
- console.log(products)
-
+//  console.log(products)
+// 
 
 
 //   if (!product) {

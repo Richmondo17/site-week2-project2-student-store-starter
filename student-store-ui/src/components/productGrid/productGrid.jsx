@@ -7,32 +7,23 @@ import { BrowserRouter, Link, Outlet} from 'react-router-dom';
 const ProductGrid = (props) => {
 
   let productData = props.product
-  console.log(productData[0])
-  
-
-
+  console.log(productData)
+ 
   //return statement
   //that links to the product grid portion of the website
   return (
     <>
-    
-    <Link to={`products/${productData.id}`}> 
- 
- 
     <div className='grid'>
-     {productData.map((item) =>(
-      //map the productData
-            <ProductCard
-            name={item.name}
-            id={item.id}
-            image={item.image}
-            price={item.price}
-            key={item.id}
-          />
-      ))}
+     
+      
+        {productData.map((product) =>
+          <ProductCard
+          products={product} key = {product.id}
+        /> 
+      )}
   
     </div>
-    </Link>
+  
     </>
   
   )

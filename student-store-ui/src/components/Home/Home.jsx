@@ -5,7 +5,7 @@ import { useState } from "react";
 import ProductGrid from "../productGrid/productGrid";
 import SubNavbar from "../SubNavbar/SubNavbar"
 
-export default function Home({ products }) {
+export default function Home({ products, cart, setCart }) {
 
 const [searchTerm, setSearchTerm] = useState("");
 const [filteredProduct, setFilteredProduct] = useState(products);
@@ -61,7 +61,7 @@ const handleSearch = (event) =>{
         </div>
         
 
-        <ProductGrid product =  {filteredProduct.length == 0? products: filteredProduct }/>
+        <ProductGrid product =  {filteredProduct.length == 0? products: filteredProduct } cart={cart} setCart={setCart}/>
         {/* <ProductGrid product = {products} /> */}
         
           

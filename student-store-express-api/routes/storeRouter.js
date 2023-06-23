@@ -1,20 +1,21 @@
 const express = require("express");
 const router = express.Router();
+const storeModel = require('../models/store.js')
 
 const db = require('../data/db.json')
 
 
 
 //Home screen
-router.get("/", (req, res) =>{
-    res.send(db);
-})
+// router.get("/", (req, res) =>{
+//     res.send(db);
+// })
 
 
 //Get all the products
-router.get("/store", (req, res) =>{
+router.get("/", (req, res) =>{
     const products = storeModel.getAllProducts();
-    response.json(products)
+    res.json(products)
 })
 
 

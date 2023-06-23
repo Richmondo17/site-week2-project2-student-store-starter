@@ -16,7 +16,7 @@ import Footer from "../Footer/Footer";
 
 
 export default function App() {
-  const url = "http://localhost:3001/store";
+  const url = "http://localhost:3001/";
   const [products, setProducts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
@@ -37,7 +37,7 @@ export default function App() {
           <Hero />
           <Sidebar isOpen ={isOpen} setIsOpen={setIsOpen} cart={cart} setCart={setCart} />
           <Routes>
-              <Route path= "/" element={<Home products={products} /> } />
+              <Route path= "/" element={<Home products={products} cart={cart}  setCart={setCart} /> } />
               <Route path= "/products/:id" element ={<ProductDetails />} />
           </Routes>
           {/* <SearchComponent data={products}/> */}

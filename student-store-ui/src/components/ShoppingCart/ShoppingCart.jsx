@@ -2,7 +2,7 @@ import React from 'react'
 import "./ShoppingCart.css"
 import {useEffect, useState} from 'react'
 
-const ShoppingCart = (cart, setCart) => {
+const ShoppingCart = (isOpen, setIsOpen, cart, setCart) => {
 
   return (
     <div>
@@ -11,6 +11,45 @@ const ShoppingCart = (cart, setCart) => {
             Shopping Cart 
             <span class="button">
                 <i class="material-icons md-48">add_shopping_cart</i>
+            </span>
+            <span>
+            {isOpen &&(
+                    <div class="CartTable">
+                        <div class="header">
+                            <div class="header-row">
+                                <span class="flex-2">Name</span>
+                                <span class="center">Quantity</span>
+                                <span class="center">Unit Price</span>
+                                <span class="center">Cost</span></div>
+                            <div class="product-row">
+                                <span class="flex-2 cart-product-name">Coconut Water</span>
+                                <span class="center cart-product-quantity">2</span>
+                                <span class="center cart-product-price">$3.25</span>
+                                <span class="center cart-product-subtotal">$6.50</span>
+                            </div>
+                        </div>
+                    <div class="receipt">
+                    <div class="receipt-subtotal">
+                        <span class="label">Subtotal</span>
+                        <span></span>
+                        <span></span>
+                    <span class="center subtotal">$6.50</span>
+                    </div>
+                    <div class="receipt-taxes">
+                        <span class="label">Taxes and Fees</span>
+                        <span></span>
+                        <span></span>
+                        <span class="center">$0.57</span>
+                    </div>
+                    <div class="receipt-total">
+                        <span class="label">Total</span>
+                        <span></span>
+                        <span></span>
+                        <span class="center total-price">$7.07</span>
+                    </div>
+                    </div>
+                </div>
+                )}
             </span>
             </h3>
         <div class="notification">
