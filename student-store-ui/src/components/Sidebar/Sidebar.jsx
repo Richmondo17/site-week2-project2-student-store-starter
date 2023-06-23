@@ -1,11 +1,20 @@
 import * as React from "react"
 import "./Sidebar.css"
+import CheckoutInfo from "../CheckoutInfo/CheckoutInfo"
+import ShoppingCart from "../ShoppingCart/ShoppingCart"
 
-export default function Sidebar() {
+export default function Sidebar({isOpen, setIsOpen, cart, setCart}) {
+
+const handleOnToggle = () => {
+  console.log("inside function")
+    setIsOpen((isOpen) => !isOpen);
+  }
+
+
   return (
-    <section className="sidebar">
+    <section className={`sidebar ${isOpen ? "open" : "closed"}`}>
       <div class="wrapper">
-        <button class="toggle-button button closed">
+        <button class="toggle-button button closed" onClick={handleOnToggle} >
           <i class="material-icons md-48">arrow_forward</i>
           </button>
             <div class="shopping-cart">
@@ -17,8 +26,11 @@ export default function Sidebar() {
                   <i class="material-icons md-48">monetization_on</i>
                 </span>
                 <span class="cart-icon icon button">
-                  <i class="material-icons md-48">fact_check</i>
+                <i class="material-icons md-48">fact_check</i>
                 </span>
+                {isOpen &&(
+                <ShoppingCart cart={cart} setCart={setCart} />
+                )}
               </div>
             </div>
           </div>

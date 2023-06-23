@@ -18,6 +18,8 @@ import Footer from "../Footer/Footer";
 export default function App() {
   const url = "http://localhost:3001/store";
   const [products, setProducts] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [cart, setCart] = useState([]);
 
   // const results = products.filter((product) => {});
   useEffect(() => {
@@ -33,7 +35,7 @@ export default function App() {
         <main>
           <Navbar />
           <Hero />
-          <Sidebar />
+          <Sidebar isOpen ={isOpen} setIsOpen={setIsOpen} cart={cart} setCart={setCart} />
           <Routes>
               <Route path= "/" element={<Home products={products} /> } />
               <Route path= "/products/:id" element ={<ProductDetails />} />
