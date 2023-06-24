@@ -2,14 +2,19 @@ import * as React from "react"
 import "./Sidebar.css"
 import CheckoutInfo from "../CheckoutInfo/CheckoutInfo"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
+import { useState } from "react"
+import CheckOut from "../CheckOutForm/CheckOut"
 
-export default function Sidebar({isOpen, setIsOpen, cart, setCart}) {
+export default function Sidebar({isOpen, setIsOpen, cart, setCart, products}) {
+
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
 
 const handleOnToggle = () => {
   console.log("inside function")
     setIsOpen((isOpen) => !isOpen);
   }
-
+console.log(isOpen)
 
   return (
     <section className={`sidebar ${isOpen ? "open" : "closed"}`}>
@@ -29,11 +34,15 @@ const handleOnToggle = () => {
                 <i class="material-icons md-48">fact_check</i>
                 </span>
                 {isOpen &&(
-                <ShoppingCart cart={cart} setCart={setCart} />
+                <ShoppingCart cart={cart} setCart={setCart} products={products} user ={user} setUser={setUser} email ={email} setEmail ={setEmail} />
                 )}
+                <CheckOut />
               </div>
             </div>
           </div>
     </section>
   )
 }
+//       <div>
+{/* <ShoppingCart shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart}  products={props.products}/>
+</div> */}

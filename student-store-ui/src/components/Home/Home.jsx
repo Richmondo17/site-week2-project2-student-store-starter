@@ -15,7 +15,7 @@ const handleSearch = (event) =>{
     event.preventDefault();
     setSearchTerm(event.target.value);
 
-    // console.log(event.target.value)
+
 
    const filter = setFilteredProduct(
         products.filter((item) =>

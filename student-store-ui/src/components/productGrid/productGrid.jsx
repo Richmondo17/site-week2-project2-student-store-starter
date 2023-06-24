@@ -4,9 +4,9 @@ import "./ProductGrid.css"
 import { BrowserRouter, Link, Outlet} from 'react-router-dom';
 
 //pass props into the ProductGrid variable
-const ProductGrid = (props) => {
+const ProductGrid = ({product, setCart, cart}) => {
 
-  let productData = props.product
+  let productData = product
   console.log(productData)
  
   //return statement
@@ -17,8 +17,8 @@ const ProductGrid = (props) => {
      
       
         {productData.map((product) =>
-          <ProductCard
-          products={product} key = {product.id}
+        <ProductCard
+          product={product} key = {product.id} setCart={setCart} cart={cart}
         /> 
       )}
   

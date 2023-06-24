@@ -5,7 +5,7 @@ import { useState } from 'react';
 import axios from 'axios';
 const ProductDetails = () => {
   const { id } = useParams();
-  // console.log(id)
+
  
 //   const product = products.find((item) => item.id === productId);
 
@@ -19,9 +19,6 @@ const ProductDetails = () => {
         setProducts(response.data.product)
     })
  }, [])
-
-//  console.log(products)
-// 
 
 
 //   if (!product) {
