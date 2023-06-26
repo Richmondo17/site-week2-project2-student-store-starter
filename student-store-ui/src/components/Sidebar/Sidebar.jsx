@@ -43,6 +43,3 @@ console.log(isOpen)
     </section>
   )
 }
-//       <div>
-{/* <ShoppingCart shoppingCart={props.shoppingCart} setShoppingCart={props.setShoppingCart}  products={props.products}/>
-</div> */}
