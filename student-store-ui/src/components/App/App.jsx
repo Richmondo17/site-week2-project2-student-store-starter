@@ -1,19 +1,18 @@
 import * as React from "react"
-// import { BrowserRouter } from 'react-router-dom'
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+
+// Importing necessary components and libraries from react-router-dom
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from "../Navbar/Navbar"
 import Hero from "../Hero/Hero"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProductDetails from '../ProductDetails/ProductDetails';
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
-// import SearchComponent from "../searchComponent/searchComponent"
-
 
 export default function App() {
   const url = "http://localhost:3001/";
@@ -21,11 +20,10 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
 
-  // const results = products.filter((product) => {});
+  // Fetching data from the server using axios and updating the 'products' state
   useEffect(() => {
     axios.get(url).then((response) => {
       setProducts(response.data.products);
-
     });
   }, []);
 
@@ -33,21 +31,33 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
+          {/* Rendering the Navbar component */}
           <Navbar />
+          
+          {/* Rendering the Hero component */}
           <Hero />
-          <Sidebar isOpen ={isOpen} setIsOpen={setIsOpen} cart={cart} setCart={setCart} />
+          
+          {/* Rendering the Sidebar component and passing necessary props */}
+          <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} setCart={setCart} />
+          
+          {/* Defining routes for different pages */}
           <Routes>
-              <Route path= "/" element={<Home products={products} cart={cart}  setCart={setCart} /> } />
-              <Route path= "/products/:id" element ={<ProductDetails />} />
+            {/* Rendering the Home component and passing necessary props */}
+            <Route path="/" element={<Home products={products} cart={cart} setCart={setCart} />} />
+            
+            {/* Rendering the ProductDetails component */}
+            <Route path="/products/:id" element={<ProductDetails />} />
           </Routes>
+          
+          {/* Rendering other components */}
           {/* <SearchComponent data={products}/> */}
           {/* <SubNavBar products={products} /> */}
-          
-          <About/>
-          <Contact/>
-          <Footer/>
+          <About />
+          <Contact />
+          <Footer />
         </main>
       </BrowserRouter>
     </div>
   );
 }
+

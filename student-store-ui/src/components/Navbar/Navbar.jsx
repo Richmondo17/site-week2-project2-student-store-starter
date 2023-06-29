@@ -9,13 +9,6 @@ export default function Navbar(props) {
 
         <Logo logo = "https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"/>
 
-        {/* <div className="socials">
-          <ul>
-            <li id="soc"><a href=""></a></li>
-            <li id="soc"><a href=""></a></li>
-            <li id="soc"><a href=""></a></li>
-          </ul>
-        </div> */}
         <br></br>
 
         <div className="links">
